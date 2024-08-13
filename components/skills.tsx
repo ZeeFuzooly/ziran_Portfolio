@@ -5,6 +5,7 @@ import SectionHeading from "./section-heading";
 import { skillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
+import { Icon } from '@iconify/react';
 
 const fadeInAnimationVariants = {
   initial: {
@@ -33,7 +34,7 @@ export default function Skills() {
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
         {skillsData.map((skill, index) => (
           <motion.li
-            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
+            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80 flex items-center gap-2"
             key={index}
             variants={fadeInAnimationVariants}
             initial="initial"
@@ -43,7 +44,8 @@ export default function Skills() {
             }}
             custom={index}
           >
-            {skill}
+            <Icon icon={skill.icon} width={24} height={24} />
+            {skill.name}
           </motion.li>
         ))}
       </ul>
