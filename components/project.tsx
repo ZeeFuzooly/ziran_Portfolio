@@ -11,7 +11,7 @@ export default function Project({
   title,
   description,
   tags,
-  imageUrl,
+  // imageUrl,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -50,12 +50,12 @@ export default function Project({
 
         <div className="relative">
           <Image
-            src={imageUrl}
+            src=""
             alt="Project I worked on"
             quality={95}
             layout="responsive"
-            width={1440}  // Adjust these dimensions to fit your design
-            height={810}  // Adjust these dimensions to fit your design
+            width={1440}  
+            height={810}  
             className="absolute hidden sm:block top-8 -right-40 w-[36rem] h-auto rounded-t-lg shadow-2xl
             transition 
             group-hover:scale-[1.04]
