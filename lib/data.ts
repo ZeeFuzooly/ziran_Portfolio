@@ -19,6 +19,13 @@ import awsIcon from '@iconify/icons-logos/aws';
 import dockerIcon from '@iconify/icons-logos/docker';
 import mysqlIcon from '@iconify/icons-logos/mysql';
 import mongodbIcon from '@iconify/icons-logos/mongodb';
+import onic from '@/public/images/oniccc.png'
+import circles from '@/public/images/circles.png'
+import ml from '@/public/images/ml.png'
+import uiux from '@/public/images/uiux.png'
+import cir from '@/public/images/cir.png'
+import mm from '@/public/images/mm.png'
+import travel from '@/public/images/travel.png'
 
 
 export const links = [
@@ -97,56 +104,56 @@ export const projectsData = [
     description:
       "Developed a company-based dashboard for Onic (a Pakistan product) from end to end, focusing on user interface design, state management, and back-end integration.",
     tags: ["React", "Next.js", "TypeScript", "Ant Design", "Jest", "Node.js"],
-    // imageUrl: operatorXImg,
+    imageUrl: onic 
   },
   {
     title: "Onic",
     description:
       "Contributed to Onic, a key product for the company in Pakistan. Focused on building user interfaces, adding interactive features, and server-side development.",
     tags: ["React", "JavaScript", "Node.js", "Jest"],
-    // imageUrl: onicImg,
+    imageUrl: onic, 
   },
   {
     title: "Annapurna Customer Website",
     description:
       "Worked on the Annapurna customer website. Built and maintained user interfaces, enhanced interactivity, and developed server-side functionalities.",
     tags: ["React", "JavaScript", "Node.js", "Jest"],
-    // imageUrl: annapurnaImg,
+    imageUrl: circles, 
   },
   {
     title: "Kirk",
     description:
       "Enhanced and maintained Kirk, a legacy dashboard. Added new features and fixed bugs to ensure stability and performance.",
     tags: ["JavaScript", "Node.js", "jQuery"],
-    // imageUrl: kirkImg,
+    imageUrl: cir, 
   },
   {
     title: "Switch-ML, Final Year Research Project",
     description:
       "Developed a Cricket Player Replacement system using machine learning techniques for optimal player replacement based on performance data.",
     tags: ["Machine Learning", "Python", "React", "JavaScript", "MySQL", "Flask"],
-    // imageUrl: switchMLImg,
+    imageUrl: ml, 
   },
   {
     title: "Takeout Tella, Mobile UI/UX Project",
     description:
       "Completed a Mobile UI/UX project for the University of Westminster, achieving a score of 92/100. Designed an intuitive interface for a food delivery application.",
     tags: ["Figma", "jQuery", "HTML5", "CSS"],
-    // imageUrl: takeoutTellaImg,
+    imageUrl: uiux, 
   },
   {
     title: "Game Performance Analytics Dashboard",
     description:
       "Worked on a dashboard project within the Motion Miracles Engineering Team as a Front-End Engineer, with additional responsibilities in back-end API development.",
     tags: ["React.js", "Bootstrap", "Firebase", "JavaScript", "AWS", "Node.js", "Python"],
-    // imageUrl: gameAnalyticsImg,
+    imageUrl: mm,  
   },
   {
     title: "TravelEX, IIT affiliated with University of Westminster",
     description:
       "Developed a hotel recommendation web application as part of a university group project, focusing on creating a responsive front-end interface.",
     tags: ["React.js", "MongoDB", "Python", "Postman"],
-    // imageUrl: travelExImg,
+    imageUrl: travel, 
   },
 ] as const;
 

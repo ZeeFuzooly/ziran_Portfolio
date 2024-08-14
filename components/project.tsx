@@ -1,5 +1,3 @@
-"use client";
-
 import { useRef } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
@@ -11,22 +9,22 @@ export default function Project({
   title,
   description,
   tags,
-  // imageUrl,
+  imageUrl,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["0 1", "1.33 1"],
   });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   return (
     <motion.div
       ref={ref}
       style={{
-        scale: scaleProgess,
-        opacity: opacityProgess,
+        scale: scaleProgress,
+        opacity: opacityProgress,
       }}
       className="group mb-3 sm:mb-8 last:mb-0"
     >
@@ -48,28 +46,24 @@ export default function Project({
           </ul>
         </div>
 
-        <div className="relative">
-          <Image
-            src=""
-            alt="Project I worked on"
-            quality={95}
-            layout="responsive"
-            width={1440}  
-            height={810}  
-            className="absolute hidden sm:block top-8 -right-40 w-[36rem] h-auto rounded-t-lg shadow-2xl
-            transition 
-            group-hover:scale-[1.04]
-            group-hover:-translate-x-3
-            group-hover:translate-y-3
-            group-hover:-rotate-2
+        
+        <Image
+          src={imageUrl}
+          alt="Project I worked on"
+          quality={95}
+          className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
+        transition 
+        group-hover:scale-[1.04]
+        group-hover:-translate-x-3
+        group-hover:translate-y-3
+        group-hover:-rotate-2
 
-            group-even:group-hover:translate-x-3
-            group-even:group-hover:translate-y-3
-            group-even:group-hover:rotate-2
+        group-even:group-hover:translate-x-3
+        group-even:group-hover:translate-y-3
+        group-even:group-hover:rotate-2
 
-            group-even:right-[initial] group-even:-left-40"
-          />
-        </div>
+        group-even:right-[initial] group-even:-left-40"
+        />  
       </section>
     </motion.div>
   );
