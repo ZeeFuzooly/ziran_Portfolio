@@ -1,8 +1,7 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
-import { LuGraduationCap } from "react-icons/lu";
-
+import { RiGraduationCapLine } from "react-icons/ri";
 import { Icon } from '@iconify/react';
 import javascriptIcon from '@iconify/icons-logos/javascript';
 import typescriptIcon from '@iconify/icons-logos/typescript';
@@ -41,6 +40,10 @@ export const links = [
   {
     name: "Experience",
     hash: "#experience",
+  },
+  {
+    name: "Academic",
+    hash: "#academic-experience",
   },
   {
     name: "Contact",
@@ -141,6 +144,48 @@ export const projectsData = [
     // imageUrl: travelExImg,
   },
 ] as const;
+
+export const academicData = [
+  {
+    date: "Sep 2018 - Jul 2022",
+    degree: "Bachelor of Engineering (BEng Hons) in Software Engineering",
+    institution: "University of Westminster",
+    description: `
+      Completed a Bachelor of Engineering in Software Engineering with First Class Honours. 
+      During my time at the university, I excelled in key modules such as Algorithms, Database Systems, 
+      and Mobile UI/UX, and completed a notable final year project focused on Machine Learning. 
+      Actively participated in the Rotaract Club of IIT and the Cutting Edge 2022 Finance Team.
+      
+      [Alumni Profile](https://www.westminster.ac.uk/study/student-profiles/ziran-fuzooly)
+    `,
+    icon: React.createElement(RiGraduationCapLine),
+  },
+  {
+    date: "Jan 2018 - Aug 2018",
+    degree: "Foundation Certificate in Higher Education",
+    institution: "Informatics Institute of Technology (IIT)",
+    description: `
+      Completed a Foundation Certificate in Higher Education with Distinction. 
+      This program provided a solid foundation in computing and prepared me for further studies 
+      in software engineering. Developed fundamental skills in programming and computer systems.
+    `,
+    icon: React.createElement(RiGraduationCapLine),
+    
+  },
+  {
+    date: "2003 - 2016",
+    degree: "Advanced Level Mathematics",
+    institution: "T/R.K.M Sri Koneswara Hindu College",
+    description: `
+      Completed Advanced Level Mathematics with a strong academic performance. 
+      Actively involved in various extracurricular activities including serving as House Captain, 
+      participating in the Scouts, School Band, and various clubs such as the Interact Club, Environmental Club, 
+      Debate Club, and Innovators Club. Contributed to the Tamil Literary Associations and School Announcing Team.
+    `,
+    icon: React.createElement(RiGraduationCapLine),
+  },
+];
+
 
 export const skillsData = [
   { name: "JavaScript", icon: javascriptIcon },
