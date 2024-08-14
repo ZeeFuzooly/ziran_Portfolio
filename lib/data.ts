@@ -2,6 +2,7 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { RiGraduationCapLine } from "react-icons/ri";
+import { GrCertificate } from "react-icons/gr";
 import { Icon } from '@iconify/react';
 import javascriptIcon from '@iconify/icons-logos/javascript';
 import typescriptIcon from '@iconify/icons-logos/typescript';
@@ -44,6 +45,10 @@ export const links = [
   {
     name: "Academic",
     hash: "#academic-experience",
+  },
+  {
+    name: "Certifications",
+    hash: "#certifications",
   },
   {
     name: "Contact",
@@ -185,6 +190,93 @@ export const academicData = [
     icon: React.createElement(RiGraduationCapLine),
   },
 ];
+
+export const certificationsData = [
+  {
+    title: "Agile Project Management by Google",
+    organization: "Google",
+    date: "05/2023 – present",
+    description: "A comprehensive course on Agile methodologies, focusing on practical applications and project management skills.",
+    icon: React.createElement(GrCertificate),
+  },
+  {
+    title: "Certified OKR Professional",
+    organization: "OKR Institute",
+    date: "07/2022 – present",
+    description: "Certification in Objectives and Key Results (OKR) to effectively set and achieve business goals.",
+    icon: React.createElement(GrCertificate),
+  },
+  {
+    title: "Artificial Intelligence Foundations: Machine Learning",
+    organization: "Coursera",
+    date: "07/2022 – present",
+    description: "Foundational knowledge in AI and machine learning, including practical applications and algorithms.",
+    icon: React.createElement(GrCertificate),
+  },
+  {
+    title: "React.js: Building an Interface",
+    organization: "Udacity",
+    date: "08/2021 – 05/2022",
+    description: "Hands-on experience in building user interfaces with React.js, covering core concepts and best practices.",
+    icon: React.createElement(GrCertificate),
+  },
+  {
+    title: "React: Ecosystems",
+    organization: "Udemy",
+    date: "09/2021 – 02/2022",
+    description: "Exploration of the React ecosystem, including tools and libraries to enhance development and performance.",
+    icon: React.createElement(GrCertificate),
+  },
+  {
+    title: "AI For Everyone",
+    organization: "Coursera",
+    date: "12/2020 – 07/2021",
+    description: "Introduction to artificial intelligence, its impact, and how it can be applied in various fields.",
+    icon: React.createElement(GrCertificate),
+  },
+  {
+    title: "Machine Learning with Python: Foundations",
+    organization: "DataCamp",
+    date: "09/2019 – 04/2020",
+    description: "Fundamentals of machine learning using Python, including data analysis and predictive modeling techniques.",
+    icon: React.createElement(GrCertificate),
+  },
+  {
+    title: "JavaScript Basic - Webfront Security Course",
+    organization: "Web Security Institute",
+    date: "Certificate ID: GR8NQZK8Y6SG",
+    description: "Basic course on JavaScript security practices for web development, focusing on securing applications from common threats.",
+    icon: React.createElement(GrCertificate),
+  },
+  {
+    title: "React.js Essential Training",
+    organization: "LinkedIn Learning",
+    date: "07/2022",
+    description: "Essential training on React.js, covering core concepts, state management, and component-based development.",
+    icon: React.createElement(GrCertificate),
+  },
+  {
+    title: "React: Creating and Hosting a Full-Stack Site",
+    organization: "Pluralsight",
+    date: "08/2021",
+    description: "Comprehensive course on building and hosting full-stack applications using React.js.",
+    icon: React.createElement(GrCertificate),
+  },
+  {
+    title: "Google Hashcode 2020",
+    organization: "Google",
+    date: "09/2021",
+    description: "Participation in the Google Hashcode competition, showcasing problem-solving and coding skills.",
+    icon: React.createElement(GrCertificate),
+  },
+  {
+    title: "Foundation Certificate in Higher Education",
+    organization: "Informatics Institute of Technology",
+    date: "02/2022",
+    description: "Foundation certificate focusing on higher education principles and academic skills.",
+    icon: React.createElement(GrCertificate),
+  },
+] as const;
 
 
 export const skillsData = [
