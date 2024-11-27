@@ -63,8 +63,8 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I'm Ziran Fuzooly.</span> I'm a{" "}
-        <span className="font-bold">Software Engineer</span> with{" "}
+        <span className="font-bold">Hello, I'm Ziran Fuzooly.</span> <br/> I'm a{" "}
+        <span className="font-bold">Senior Software Engineer</span> with{" "}
         <span className="font-bold">extensive experience</span> in building{" "}
         <span className="italic">scalable and efficient applications</span>
       </motion.h1>
@@ -91,7 +91,7 @@ export default function Intro() {
 
         <a
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-          href="https://drive.google.com/uc?export=download&id=1gQXHlN_AlMpAVg9LMzgohaFiHCjTdKqu"
+          href="https://drive.google.com/uc?export=download&id=17JTsEkCOo6aJ5V41xT6jY0ePOyBtm19Z"
           download
         >
           Download CV{" "}

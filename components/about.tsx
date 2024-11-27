@@ -19,19 +19,19 @@ export default function About() {
     >
       <SectionHeading>About Me</SectionHeading>
       <p className="mb-3">
-        I am a results-driven Software Engineer with a deep passion for Computer Science. 
-        I hold a BEng(Hons) in Software Engineering from the University of Westminster, in collaboration with the Informatics Institute of Technology. 
-        My journey has been marked by a strong foundation in software development, honed through both academic excellence and hands-on industry experience.
+        I am a Senior Software Engineer at Softvil Technologies, currently deputed to Grubtech. I specialize in full-stack development, delivering impactful software solutions and improving system efficiency.
       </p>
 
       <p className="mb-3">
-        During my academic career, I developed excellent communication skills and demonstrated a natural aptitude for leadership. 
-        I completed a significant Third-year Industrial Placement at Motion Miracles as a Software Engineer Intern, where I contributed to impactful projects and honed my technical abilities.
+        Previously, at Circles.Life, I developed features for a SaaS platform serving global telcos, with a focus on front-end development. I also contributed to a dashboard project at Motion Miracles, enhancing UI/UX and backend systems using ReactJS and Firebase.
+      </p>
+
+      <p className="mb-3">
+        Outside of work, I mentor aspiring software engineers at Westminster, providing career guidance and technical support.
       </p>
 
       <p>
-        Currently, I am working as a Software Engineer at Circles.Life, where I leverage my technical expertise to drive the company's success. 
-        I am passionate about continuing to grow as a developer and am always eager to take on new challenges in the field of software engineering.
+        My technical skills include React.js, Next.js, JavaScript, TypeScript, Java, Spring Boot, MongoDB, UI/UX design, and more. I am always learning and strive to stay ahead of industry trends.
       </p>
     </motion.section>
   );
