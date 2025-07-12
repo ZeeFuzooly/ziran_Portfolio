@@ -5,34 +5,46 @@ import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 
+const paragraphVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.2 + i * 0.1, duration: 0.6, ease: "easeOut" },
+  }),
+};
+
 export default function About() {
   const { ref } = useSectionInView("About");
+
+  const paragraphs = [
+    `I am a <strong>Senior Software Engineer</strong> with a deep passion for technology, engineering, and innovation. I graduated with a <strong>First-Class BEng(Hons)</strong> in Software Engineering from the <strong>University of Westminster</strong> and completed an industrial placement at <strong>Motion Miracles</strong>.`,
+    `Currently, I lead the development of scalable, high-performance applications at <strong>ITWorx</strong> via <strong>Insharp Technologies</strong>, focusing on modern stacks like <strong>.NET</strong> and <strong>React</strong>.`,
+    `Previously, I worked as a <strong>Senior Software Engineer</strong> at <strong>Grubtech</strong> via <strong>Softvil Technologies</strong>, leading full-stack product development with <strong>React</strong>, <strong>Java</strong>, and <strong>Spring Boot</strong>. My role included building robust APIs, integrating POS systems, and optimizing performance for seamless customer experience.`,
+    `I also contributed to <strong>Circles.Life</strong> by building and enhancing scalable features across both front-end and back-end systems, supporting a SaaS platform for global telcos.`,
+  ];
 
   return (
     <motion.section
       ref={ref}
-      className="mb-28 max-w-[45rem] text-justify leading-8 sm:mb-40 scroll-mt-28"
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.175 }}
       id="about"
+      className="scroll-mt-28 px-4 sm:px-0 max-w-3xl mx-auto mb-28 sm:mb-40 leading-relaxed text-muted-foreground"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ staggerChildren: 0.15 }}
     >
       <SectionHeading>About Me</SectionHeading>
-      <p className="mb-3">
-        I am a Senior Software Engineer at Softvil Technologies, currently deputed to Grubtech. I specialize in full-stack development, delivering impactful software solutions and improving system efficiency.
-      </p>
 
-      <p className="mb-3">
-        Previously, at Circles.Life, I developed features for a SaaS platform serving global telcos, with a focus on front-end development. I also contributed to a dashboard project at Motion Miracles, enhancing UI/UX and backend systems using ReactJS and Firebase.
-      </p>
-
-      <p className="mb-3">
-        Outside of work, I mentor aspiring software engineers at Westminster, providing career guidance and technical support.
-      </p>
-
-      <p>
-        My technical skills include React.js, Next.js, JavaScript, TypeScript, Java, Spring Boot, MongoDB, UI/UX design, and more. I am always learning and strive to stay ahead of industry trends.
-      </p>
+      {paragraphs.map((html, i) => (
+        <motion.p
+          key={i}
+          custom={i}
+          variants={paragraphVariants}
+          className="mb-6 text-lg"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      ))}
     </motion.section>
   );
 }
