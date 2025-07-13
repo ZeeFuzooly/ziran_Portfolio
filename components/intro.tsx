@@ -94,7 +94,7 @@ export default function Intro() {
 
         {/* Download CV */}
         <a
-          href="https://drive.google.com/uc?export=download&id=17JTsEkCOo6aJ5V41xT6jY0ePOyBtm19Z"
+          href="https://drive.google.com/uc?export=download&id=1m6pkHHmjXktqOFWkuYFfSiKQz1yjvyGO"
           className="group inline-flex items-center justify-center gap-2 rounded-full bg-background px-6 py-3 border border-border transition-transform hover:scale-105 focus:scale-110 active:scale-100 dark:bg-white/10"
           download
         >
