@@ -16,11 +16,7 @@ export default function Intro() {
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
-    <section
-      ref={ref}
-      id="home"
-      s
-    >
+    <section ref={ref} id="home">
       {/* Avatar */}
       <div className="flex justify-center mb-6">
         <motion.div
@@ -69,8 +65,8 @@ export default function Intro() {
           text="Senior Software Engineer"
           className="text-primary font-semibold"
         />{" "}
-        building <span className="italic">scalable</span> and{" "}
-        <span className="italic">impactful</span> digital experiences.
+        building <span className="font-bold">scalable</span> and{" "}
+        <span className="font-bold">impactful</span> digital experiences.
       </motion.h2>
 
       {/* Buttons */}
