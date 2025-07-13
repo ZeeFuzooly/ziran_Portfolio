@@ -18,12 +18,7 @@ export default function Project({
   const isEven = index % 2 === 0;
 
   return (
-    <ScrollReveal
-      baseOpacity={0}
-      enableBlur
-      baseRotation={5}
-      blurStrength={10}
-    >
+    <ScrollReveal baseOpacity={0} enableBlur baseRotation={5} blurStrength={10}>
       <div
         className={`flex flex-col-reverse sm:flex-row ${
           !isEven ? "sm:flex-row-reverse" : ""
@@ -42,7 +37,12 @@ export default function Project({
             {tags.map((tag, idx) => (
               <li
                 key={idx}
-                className="text-xs bg-primary/90 text-white px-3 py-1 rounded-full uppercase tracking-wide font-medium"
+                className="text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full 
+               bg-background text-foreground 
+               border border-border 
+               shadow-sm hover:shadow-md 
+               dark:bg-white/10 dark:text-white/80 dark:border-white/20 
+               transition"
               >
                 {tag}
               </li>

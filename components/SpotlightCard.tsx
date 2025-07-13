@@ -23,7 +23,7 @@ const SpotlightCard = ({
         "bg-white/90 dark:bg-white/5 backdrop-blur-md",
         border && "border border-border",
         "shadow-md hover:shadow-xl hover:ring-2 hover:ring-primary/30 dark:hover:ring-primary/20",
-        "w-full max-w-full sm:max-w-2xl md:max-w-3xl mx-auto", // ✅ responsive width
+        "w-full max-w-full sm:max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto", // ✅ responsive width
         className
       )}
     >

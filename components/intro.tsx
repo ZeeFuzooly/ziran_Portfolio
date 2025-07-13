@@ -19,7 +19,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="relative mb-28 sm:mb-40 scroll-mt-28 px-4 sm:px-6 text-center max-w-3xl mx-auto"
+      s
     >
       {/* Avatar */}
       <div className="flex justify-center mb-6">

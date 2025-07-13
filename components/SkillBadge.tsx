@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
-import { cn } from "@/lib/utils"; // Tailwind merge or clsx-compatible
+import { cn } from "@/lib/utils";
 
 type SkillBadgeProps = {
   name: string;
@@ -29,13 +29,13 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({ name, icon, index }) => {
       viewport={{ once: true }}
       custom={index}
       className={cn(
-        "flex items-center gap-2 px-4 py-2 rounded-xl",
-        "bg-white dark:bg-white/10 border border-border/50 text-sm sm:text-base",
+        "flex items-center gap-3 px-5 py-3 rounded-2xl",
+        "bg-white dark:bg-white/10 border border-border/50 text-base sm:text-lg",
         "transition-all duration-300 hover:scale-105 hover:shadow-md dark:text-white/80"
       )}
     >
-      <Icon icon={icon} width={20} height={20} />
-      <span>{name}</span>
+      <Icon icon={icon} width={24} height={24} />
+      <span className="font-medium">{name}</span>
     </motion.li>
   );
 };

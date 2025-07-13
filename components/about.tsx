@@ -51,7 +51,8 @@ export default function About() {
     <motion.section
       ref={ref}
       id="about"
-      className="scroll-mt-28 px-4 sm:px-0 max-w-3xl mx-auto mb-28 sm:mb-40 text-muted-foreground"
+      className="scroll-mt-28 px-4 sm:px-8 max-w-5xl mx-auto mb-28 sm:mb-40 text-muted-foreground"
+
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
