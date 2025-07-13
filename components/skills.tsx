@@ -4,22 +4,7 @@ import React from "react";
 import SectionHeading from "./section-heading";
 import { skillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
-import { motion } from "framer-motion";
-import { Icon } from '@iconify/react';
-
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.05 * index,
-    },
-  }),
-};
+import SkillBadge from "./SkillBadge";
 
 export default function Skills() {
   const { ref } = useSectionInView("Skills");
@@ -28,25 +13,13 @@ export default function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
+      className="mb-28 max-w-4xl scroll-mt-28 text-center sm:mb-40 px-4"
     >
       <SectionHeading>My skills</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
+
+      <ul className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-6">
         {skillsData.map((skill, index) => (
-          <motion.li
-            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80 flex items-center gap-2"
-            key={index}
-            variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{
-              once: true,
-            }}
-            custom={index}
-          >
-            <Icon icon={skill.icon} width={24} height={24} />
-            {skill.name}
-          </motion.li>
+          <SkillBadge key={index} name={skill.name} icon={skill.icon} index={index} />
         ))}
       </ul>
     </section>

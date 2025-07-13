@@ -10,25 +10,29 @@ import "react-vertical-timeline-component/style.min.css";
 import { academicData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
+import SpotlightCard from "./SpotlightCard";
 
 export default function AcademicExperience() {
   const { ref } = useSectionInView("Academic");
   const { theme } = useTheme();
 
   return (
-    <section id="academic-experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
+    <section
+      id="academic-experience"
+      ref={ref}
+      className="scroll-mt-28 mb-28 sm:mb-40"
+    >
       <SectionHeading>My Academic Journey</SectionHeading>
+
       <VerticalTimeline lineColor="">
         {academicData.map((item, index) => (
           <React.Fragment key={index}>
             <VerticalTimelineElement
               contentStyle={{
-                background:
-                  theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.05)",
+                background: "transparent",
                 boxShadow: "none",
-                border: "1px solid rgba(0, 0, 0, 0.05)",
-                textAlign: "left",
-                padding: "1.3rem 2rem",
+                border: "none",
+                padding: "0",
               }}
               contentArrowStyle={{
                 borderRight:
@@ -44,20 +48,29 @@ export default function AcademicExperience() {
                 fontSize: "1.5rem",
               }}
             >
-              <h3 className="font-semibold capitalize">{item.degree}</h3>
-              <p className="font-normal !mt-0">{item.institution}</p>
-              {Array.isArray(item.description) ? (
-  <ul className="list-disc pl-5 mt-2 space-y-2 text-gray-700 dark:text-white/75">
-    {item.description.map((point, idx) => (
-      <li key={idx}>{point}</li>
-    ))}
-  </ul>
-) : (
-  <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
-    {item.description}
-  </p>
-)}
+              <SpotlightCard
+                className="mx-auto mt-4"
+                glowColor={theme === "light" ? "#3b82f6" : "#0ea5e9"}
+              >
+                <h3 className="text-xl sm:text-2xl font-bold capitalize">
+                  {item.degree}
+                </h3>
+                <p className="text-sm font-medium text-muted-foreground">
+                  {item.institution}
+                </p>
 
+                {Array.isArray(item.description) ? (
+                  <ul className="list-disc pl-5 mt-3 space-y-2 text-sm text-gray-700 dark:text-white/80">
+                    {item.description.map((point, idx) => (
+                      <li key={idx}>{point}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="mt-2 text-sm text-gray-700 dark:text-white/80">
+                    {item.description}
+                  </p>
+                )}
+              </SpotlightCard>
             </VerticalTimelineElement>
           </React.Fragment>
         ))}

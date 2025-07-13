@@ -1,44 +1,48 @@
-import { useRef } from "react";
-import { projectsData } from "@/lib/data";
-import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+"use client";
 
-type ProjectProps = (typeof projectsData)[number];
+import Image from "next/image";
+import ScrollReveal from "./ScrollReveal"; // ✅ make sure this exists
+import { projectsData } from "@/lib/data";
+
+type ProjectProps = (typeof projectsData)[number] & {
+  index: number;
+};
 
 export default function Project({
   title,
   description,
   tags,
   imageUrl,
+  index,
 }: ProjectProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1.33 1"],
-  });
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const isEven = index % 2 === 0;
 
   return (
-    <motion.div
-      ref={ref}
-      style={{
-        scale: scaleProgress,
-        opacity: opacityProgress,
-      }}
-      className="group mb-3 sm:mb-8 last:mb-0"
+    <ScrollReveal
+      baseOpacity={0}
+      enableBlur
+      baseRotation={5}
+      blurStrength={10}
     >
-      <section className="bg-gray-100 max-w-[50rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
-        <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 flex flex-col h-full sm:max-w-[60%] sm:group-even:ml-[20rem]">
-          <h3 className="text-2xl font-semibold">{title}</h3>
-          <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
+      <div
+        className={`flex flex-col-reverse sm:flex-row ${
+          !isEven ? "sm:flex-row-reverse" : ""
+        } items-center gap-6 sm:gap-10 bg-white/80 dark:bg-white/5 border border-border/30 rounded-xl shadow-md p-6 sm:p-8 backdrop-blur-md transition-all duration-300 hover:shadow-lg max-w-5xl mx-auto`}
+      >
+        {/* Text Content */}
+        <div className="w-full sm:w-1/2">
+          <h3 className="text-2xl font-bold mb-2 text-foreground dark:text-white">
+            {title}
+          </h3>
+          <p className="text-sm text-muted-foreground dark:text-white/80 leading-relaxed">
             {description}
           </p>
-          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-            {tags.map((tag, index) => (
+
+          <ul className="flex flex-wrap gap-2 mt-4">
+            {tags.map((tag, idx) => (
               <li
-                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-                key={index}
+                key={idx}
+                className="text-xs bg-primary/90 text-white px-3 py-1 rounded-full uppercase tracking-wide font-medium"
               >
                 {tag}
               </li>
@@ -46,25 +50,17 @@ export default function Project({
           </ul>
         </div>
 
-        
-        <Image
-          src={imageUrl}
-          alt="Project I worked on"
-          quality={95}
-          className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-        transition 
-        group-hover:scale-[1.04]
-        group-hover:-translate-x-3
-        group-hover:translate-y-3
-        group-hover:-rotate-2
-
-        group-even:group-hover:translate-x-3
-        group-even:group-hover:translate-y-3
-        group-even:group-hover:rotate-2
-
-        group-even:right-[initial] group-even:-left-40"
-        />  
-      </section>
-    </motion.div>
+        {/* Image */}
+        <div className="w-full sm:w-1/2 h-56 sm:h-48 rounded-lg overflow-hidden">
+          <Image
+            src={imageUrl}
+            alt={title}
+            width={600}
+            height={300}
+            className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+          />
+        </div>
+      </div>
+    </ScrollReveal>
   );
 }
