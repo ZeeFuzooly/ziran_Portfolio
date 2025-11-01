@@ -1,6 +1,6 @@
-"use client";  
+"use client";
 import React from "react";
-import { FaPaperPlane } from "react-icons/fa";
+import { Send } from "lucide-react";
 import { experimental_useFormStatus as useFormStatus } from "react-dom";
 
 export default function SubmitBtn() {
@@ -9,16 +9,19 @@ export default function SubmitBtn() {
   return (
     <button
       type="submit"
-      className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 dark:bg-white dark:bg-opacity-10 disabled:scale-100 disabled:bg-opacity-65"
+      className="group relative w-full h-14 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/50 dark:shadow-blue-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/60 hover:scale-[1.02] active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
       disabled={pending}
     >
       {pending ? (
-        <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+        <div className="flex items-center justify-center gap-2">
+          <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+          <span>Sending...</span>
+        </div>
       ) : (
-        <>
-          Submit{" "}
-          <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{" "}
-        </>
+        <span className="flex items-center justify-center gap-2">
+          Send Message
+          <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+        </span>
       )}
     </button>
   );

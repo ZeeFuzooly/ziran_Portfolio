@@ -2,14 +2,165 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  --line-color: #e5e7eb;
+@layer base {
+  :root {
+    /* Existing line color */
+    --line-color: #e5e7eb;
+  }
+
+  html.dark {
+    --line-color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Smoother scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Improve text rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
 }
 
-html.dark {
-  --line-color: rgba(255, 255, 255, 0.2);
+@layer utilities {
+  .borderBlack {
+    @apply border border-black/10;
+  }
+
+  /* Enhanced focus states for accessibility (WCAG AA+) */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-blue-500;
+  }
+
+  /* Smooth transitions for interactive elements */
+  .interactive {
+    @apply transition-all duration-200 ease-out;
+  }
 }
 
-.borderBlack {
-  @apply border border-black/10;
+/* ═══════════════════════════════════════════════════════════
+   ACCESSIBILITY - Respect user's motion preferences
+   ═══════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HIGH CONTRAST MODE SUPPORT
+   ═══════════════════════════════════════════════════════════ */
+@media (prefers-contrast: high) {
+  :root {
+    --line-color: #000000;
+  }
+
+  html.dark {
+    --line-color: #ffffff;
+  }
+
+  /* Ensure sufficient contrast for interactive elements */
+  button,
+  a,
+  [role="button"] {
+    @apply ring-2 ring-current;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TYPOGRAPHY ENHANCEMENTS
+   ═══════════════════════════════════════════════════════════ */
+@layer base {
+  /* Prevent text overflow and improve readability */
+  p, li, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* Improve heading spacing */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  /* Better link accessibility */
+  a {
+    @apply underline-offset-2;
+  }
+
+  /* Skip to content link for keyboard users */
+  .skip-to-content {
+    @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50;
+    @apply px-4 py-2 bg-blue-600 text-white rounded-md;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SELECTION STYLING
+   ═══════════════════════════════════════════════════════════ */
+::selection {
+  @apply bg-blue-500/20 text-gray-900;
+}
+
+html.dark ::selection {
+  @apply bg-blue-400/30 text-white;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   VERTICAL TIMELINE CUSTOMIZATION
+   ═══════════════════════════════════════════════════════════ */
+.vertical-timeline-element-date {
+  padding: 0.5rem 1rem !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  color: #6b7280 !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(249, 250, 251, 0.9)) !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+html.dark .vertical-timeline-element-date {
+  color: #d1d5db !important;
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.9), rgba(17, 24, 39, 0.9)) !important;
+  border: 1px solid rgba(75, 85, 99, 0.5) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PRINT STYLES
+   ═══════════════════════════════════════════════════════════ */
+@media print {
+  /* Hide non-essential elements when printing */
+  nav,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Ensure good contrast for printing */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Prevent page breaks inside elements */
+  p, h2, h3 {
+    page-break-inside: avoid;
+  }
+
+  /* Add URLs after links */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    font-weight: normal;
+  }
 }

@@ -13,11 +13,11 @@ export default function Skills() {
     <section
       id="skills"
       ref={ref}
-       className="scroll-mt-28 px-4 sm:px-8 max-w-5xl mx-auto mb-28 sm:mb-40 text-muted-foreground"
+      className="scroll-mt-28 px-4 sm:px-8 max-w-6xl mx-auto mb-28 sm:mb-40"
     >
-      <SectionHeading>My skills</SectionHeading>
+      <SectionHeading>Technical Expertise</SectionHeading>
 
-      <ul className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-6">
+      <ul className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-8">
         {skillsData.map((skill, index) => (
           <SkillBadge key={index} name={skill.name} icon={skill.icon} index={index} />
         ))}
