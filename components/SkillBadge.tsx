@@ -26,7 +26,7 @@ const fadeInVariants = {
   }),
 };
 
-const SkillBadge: React.FC<SkillBadgeProps> = ({ name, icon, index }) => {
+const SkillBadge = React.memo<SkillBadgeProps>(function SkillBadge({ name, icon, index }) {
   return (
     <motion.li
       variants={fadeInVariants}
@@ -63,6 +63,6 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({ name, icon, index }) => {
       <span className="relative z-10">{name}</span>
     </motion.li>
   );
-};
+});
 
 export default SkillBadge;

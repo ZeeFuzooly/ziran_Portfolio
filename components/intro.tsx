@@ -18,6 +18,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
+      aria-label="Introduction and hero section"
       className="mb-16 sm:mb-20 max-w-[75rem] mx-auto text-center scroll-mt-[100rem]"
     >
       <div className="flex items-center justify-center">
@@ -42,7 +43,7 @@ export default function Intro() {
             <div className="relative">
               <Image
                 src="/images/sassaas.png"
-                alt="Ziran Fuzooly"
+                alt="Ziran Fuzooly - Lead Engineer Product Experience"
                 width={192}
                 height={192}
                 quality={95}
@@ -62,10 +63,11 @@ export default function Intro() {
                   delay: 0.4,
                   duration: 0.7,
                 }}
+                aria-label="Available for work"
               >
                 <div className="relative">
                   <div className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-75"></div>
-                  <div className="relative h-4 w-4 sm:h-5 sm:w-5 rounded-full bg-green-500 border-2 border-white dark:border-gray-800 shadow-lg"></div>
+                  <div className="relative h-4 w-4 sm:h-5 sm:w-5 rounded-full bg-green-500 border-2 border-white dark:border-gray-800 shadow-lg" role="status" aria-label="Online and available"></div>
                 </div>
               </motion.div>
             </div>
@@ -152,9 +154,10 @@ export default function Intro() {
               setTimeOfLastClick(Date.now());
             }}
             className="group relative inline-flex items-center justify-center gap-2 h-12 px-8 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/50 transition-all hover:shadow-xl hover:shadow-blue-500/60 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:shadow-blue-500/30 dark:hover:shadow-blue-500/40"
+            aria-label="Navigate to contact section to connect with Ziran"
           >
             <span>Let's Connect</span>
-            <BsArrowRight className="text-sm transition-transform group-hover:translate-x-1" />
+            <BsArrowRight className="text-sm transition-transform group-hover:translate-x-1" aria-hidden="true" />
           </Link>
 
           {/* Secondary CTA */}
@@ -162,9 +165,10 @@ export default function Intro() {
             href="https://drive.google.com/uc?export=download&id=1m6pkHHmjXktqOFWkuYFfSiKQz1yjvyGO"
             className="group inline-flex items-center justify-center gap-2 h-12 px-8 rounded-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-2 border-gray-200 dark:border-gray-700 shadow-md transition-all hover:shadow-lg hover:scale-105 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
             download
+            aria-label="Download Ziran Fuzooly's CV in PDF format"
           >
             <span>Download CV</span>
-            <HiDownload className="text-sm transition-transform group-hover:translate-y-0.5" />
+            <HiDownload className="text-sm transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
           </a>
         </motion.div>
 
@@ -174,15 +178,17 @@ export default function Intro() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
+          role="navigation"
+          aria-label="Social media links"
         >
           <a
             href="https://www.linkedin.com/in/ziranfuzooly/"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-center h-12 w-12 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-2 border-gray-200 dark:border-gray-700 shadow-md transition-all hover:shadow-lg hover:scale-110 hover:text-blue-600 hover:border-blue-300 dark:hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            aria-label="LinkedIn"
+            aria-label="Visit Ziran Fuzooly's LinkedIn profile (opens in new tab)"
           >
-            <BsLinkedin className="h-5 w-5" />
+            <BsLinkedin className="h-5 w-5" aria-hidden="true" />
           </a>
 
           <a
@@ -190,9 +196,9 @@ export default function Intro() {
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-center h-12 w-12 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-2 border-gray-200 dark:border-gray-700 shadow-md transition-all hover:shadow-lg hover:scale-110 hover:text-gray-900 hover:border-gray-400 dark:hover:text-white dark:hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-            aria-label="GitHub"
+            aria-label="Visit Ziran Fuzooly's GitHub profile (opens in new tab)"
           >
-            <FaGithubSquare className="h-5 w-5" />
+            <FaGithubSquare className="h-5 w-5" aria-hidden="true" />
           </a>
         </motion.div>
 
