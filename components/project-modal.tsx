@@ -219,7 +219,7 @@ export default function ProjectModal({
 
                 {/* Full Description */}
                 <div id="modal-description" className="mb-6">
-                  {"fullDescription" in project && project.fullDescription ? (
+                  {("fullDescription" in project && project.fullDescription) ? (
                     <div className="prose dark:prose-invert max-w-none">
                       <p className="text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">
                         {project.fullDescription}
@@ -227,7 +227,7 @@ export default function ProjectModal({
                     </div>
                   ) : (
                     <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                      {project.description}
+                      {(project as any).description || ""}
                     </p>
                   )}
                 </div>
