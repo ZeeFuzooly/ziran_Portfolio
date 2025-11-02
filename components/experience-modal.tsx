@@ -211,7 +211,7 @@ export default function ExperienceModal({
                   </time>
                   {" · "}
                   <span>
-                    {"duration" in experience ? experience.duration : calculateDuration(experience.date)}
+                    {("duration" in experience ? experience.duration : calculateDuration(experience.date)) as string}
                   </span>
                 </div>
 
