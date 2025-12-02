@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/header";
 import "./globals.css";
 import { Inter } from "next/font/google";
@@ -10,9 +11,54 @@ import ScrollProgress from "@/components/scroll-progress";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Ziran Fuzooly | Personal Portfolio",
-  description: "Ziran Fuzooly is a Software Engineer with 4 years of experience.",
+export const metadata: Metadata = {
+  metadataBase: new URL("https://ziran-portfolio.vercel.app"),
+  title: {
+    default: "Ziran Fuzooly | Software Engineer Portfolio",
+    template: "%s | Ziran Fuzooly",
+  },
+  description:
+    "Ziran Fuzooly is a Software Engineer with 4 years of experience specializing in full-stack development, React, Next.js, and modern web technologies.",
+  keywords: [
+    "Ziran Fuzooly",
+    "Software Engineer",
+    "Full Stack Developer",
+    "React Developer",
+    "Next.js",
+    "Web Developer",
+    "Portfolio",
+  ],
+  authors: [{ name: "Ziran Fuzooly" }],
+  creator: "Ziran Fuzooly",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://ziran-portfolio.vercel.app",
+    siteName: "Ziran Fuzooly Portfolio",
+    title: "Ziran Fuzooly | Software Engineer Portfolio",
+    description:
+      "Ziran Fuzooly is a Software Engineer with 4 years of experience specializing in full-stack development, React, Next.js, and modern web technologies.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ziran Fuzooly | Software Engineer Portfolio",
+    description:
+      "Ziran Fuzooly is a Software Engineer with 4 years of experience specializing in full-stack development.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "googlec2a7c7695a31a5b6",
+  },
 };
 
 export default function RootLayout({
