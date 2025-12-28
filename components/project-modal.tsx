@@ -232,11 +232,34 @@ export default function ProjectModal({
                   )}
                 </div>
 
+                {/* Platforms (for SimHealth) */}
+                {"platforms" in project && project.platforms && (project.platforms as string[]).length > 0 && (
+                  <div className="mb-6">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">
+                      Platforms I Lead
+                    </h3>
+                    <ul className="space-y-2.5">
+                      {(project.platforms as string[]).map((platform: string, idx: number) => (
+                        <motion.li
+                          key={idx}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.1 }}
+                          className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300"
+                        >
+                          <span className="text-purple-500 mt-1.5 flex-shrink-0">◆</span>
+                          <span>{platform}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 {/* Contributions/Key Points */}
                 {"contributions" in project && project.contributions && project.contributions.length > 0 && (
                   <div className="mb-6">
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                      Key Contributions
+                      Key Responsibilities
                     </h3>
                     <ul className="space-y-2.5">
                       {project.contributions.map((contribution: string, idx: number) => (

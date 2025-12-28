@@ -9,7 +9,7 @@ import { ExternalLink } from "lucide-react";
 import CertificationModal from "./certification-modal";
 
 export default function Certifications() {
-  const { ref } = useSectionInView("Certifications");
+  const { ref } = useSectionInView("Certifications", 0.2);
   const [selectedCertification, setSelectedCertification] = useState<(typeof certificationsData)[number] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);

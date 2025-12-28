@@ -107,6 +107,9 @@ export default function Intro() {
           <span className="block bg-gradient-to-r from-gray-900 via-blue-800 to-purple-900 dark:from-white dark:via-blue-200 dark:to-purple-200 bg-clip-text text-transparent">
             Ziran Fuzooly
           </span>
+          <span className="block text-lg sm:text-xl md:text-2xl mt-2 font-semibold text-gray-600 dark:text-gray-400">
+            BEng (Hons) | MBA (Reading)
+          </span>
         </motion.h1>
 
         {/* Role badge */}

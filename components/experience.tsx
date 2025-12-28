@@ -15,7 +15,7 @@ import { ChevronRight } from "lucide-react";
 import ExperienceModal from "./experience-modal";
 
 export default function Experience() {
-  const { ref } = useSectionInView("Experience");
+  const { ref } = useSectionInView("Experience", 0.2);
   const { theme } = useTheme();
   const [selectedExperience, setSelectedExperience] = useState<(typeof experiencesData)[number] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);

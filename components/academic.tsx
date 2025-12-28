@@ -15,7 +15,7 @@ import { ChevronRight } from "lucide-react";
 import AcademicModal from "./academic-modal";
 
 export default function AcademicExperience() {
-  const { ref } = useSectionInView("Academic");
+  const { ref } = useSectionInView("Academic", 0.3);
   const { theme } = useTheme();
   const [selectedAcademic, setSelectedAcademic] = useState<(typeof academicData)[number] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);

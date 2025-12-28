@@ -8,7 +8,7 @@ import ProjectModal from "./project-modal";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function Projects() {
-  const { ref } = useSectionInView("Projects", 0.5);
+  const { ref } = useSectionInView("Projects", 0.2);
   const [selectedProject, setSelectedProject] = useState<(typeof projectsData)[number] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);

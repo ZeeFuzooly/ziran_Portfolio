@@ -239,8 +239,40 @@ export default function ExperienceModal({
                   </a>
                 )}
 
+                {/* Platforms (for SimHealth) */}
+                {"platforms" in experience && experience.platforms && (experience.platforms as string[]).length > 0 && (
+                  <div className="mb-6">
+                    <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                      <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      Platforms I Lead
+                    </h3>
+                    <ul className="space-y-2.5" role="list">
+                      {(experience.platforms as string[]).map((platform: string, idx: number) => (
+                        <motion.li
+                          key={idx}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.1 }}
+                          className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300"
+                        >
+                          <span className="text-purple-500 mt-1.5 flex-shrink-0">◆</span>
+                          <span>{platform}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 {/* Description */}
                 <div id="modal-description" className="mb-6">
+                  <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                    <svg className="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                    </svg>
+                    Key Responsibilities
+                  </h3>
                   {Array.isArray(experience.description) ? (
                     <ul className="space-y-2.5" role="list">
                       {experience.description.map((point, idx) => (
@@ -251,7 +283,7 @@ export default function ExperienceModal({
                           transition={{ delay: idx * 0.1 }}
                           className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300"
                         >
-                          <span className="text-gray-400 mt-1.5 flex-shrink-0">•</span>
+                          <span className="text-blue-500 mt-1.5 flex-shrink-0">•</span>
                           <span>{point}</span>
                         </motion.li>
                       ))}
