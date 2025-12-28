@@ -9,6 +9,7 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import TypingAnimation from "./typing-animation";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -112,7 +113,7 @@ export default function Intro() {
           </span>
         </motion.h1>
 
-        {/* Role badge */}
+        {/* Role badge with typing animation */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -122,7 +123,17 @@ export default function Intro() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg shadow-blue-500/50 dark:shadow-blue-500/30">
             <div className="h-2 w-2 rounded-full bg-white animate-pulse"></div>
             <span className="text-sm font-semibold text-white sm:text-base">
-              Lead Engineer - Product Experience
+              <TypingAnimation
+                words={[
+                  "Lead Engineer - Product Experience",
+                  "Frontend Architecture Expert",
+                  "Full Stack Developer",
+                  "UI/UX Enthusiast",
+                ]}
+                typingSpeed={80}
+                deletingSpeed={40}
+                pauseDuration={2500}
+              />
             </span>
           </div>
         </motion.div>
