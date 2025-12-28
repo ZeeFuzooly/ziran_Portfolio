@@ -72,7 +72,7 @@ export default function AcademicExperience() {
                   transition={{ duration: 0.5 }}
                   whileHover={{ y: -4 }}
                   whileTap={{ scale: 0.98 }}
-                  className="mx-auto w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl p-4 sm:p-6 bg-white/80 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-purple-400 dark:hover:border-purple-500 transition-all hover:shadow-xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/20 group cursor-pointer"
+                  className="w-full p-4 sm:p-6 bg-white/80 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-purple-400 dark:hover:border-purple-500 transition-all hover:shadow-xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/20 group cursor-pointer"
                   onClick={() => handleViewDetails(item, index)}
                   role="button"
                   tabIndex={0}

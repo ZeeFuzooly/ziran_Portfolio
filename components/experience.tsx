@@ -84,7 +84,7 @@ export default function Experience() {
                     boxShadow: "0 25px 50px -12px rgba(59, 130, 246, 0.25)"
                   }}
                   whileTap={{ scale: 0.98 }}
-                  className="mx-auto w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl p-6 bg-white/80 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 transition-all hover:shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 group cursor-pointer perspective-1000 preserve-3d overflow-hidden"
+                  className="w-full p-6 bg-white/80 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 transition-all hover:shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 group cursor-pointer perspective-1000 preserve-3d overflow-hidden"
                   onClick={() => handleViewDetails(item, index)}
                   role="button"
                   tabIndex={0}

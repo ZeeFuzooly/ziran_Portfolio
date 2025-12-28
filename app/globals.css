@@ -145,22 +145,49 @@ html.dark ::selection {
   padding: 0 !important;
 }
 
+/* Timeline element wrapper - reduce gap between elements */
+.vertical-timeline-element {
+  margin: 1.5rem 0 !important;
+}
+
+/* Date badge styling */
 .vertical-timeline-element-date {
   padding: 0.5rem 1rem !important;
   font-weight: 600 !important;
   font-size: 0.875rem !important;
   color: #6b7280 !important;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(249, 250, 251, 0.9)) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(249, 250, 251, 0.95)) !important;
   border: 1px solid #e5e7eb !important;
   border-radius: 0.75rem !important;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
   backdrop-filter: blur(8px) !important;
+  white-space: nowrap !important;
 }
 
 html.dark .vertical-timeline-element-date {
   color: #d1d5db !important;
-  background: linear-gradient(135deg, rgba(31, 41, 55, 0.9), rgba(17, 24, 39, 0.9)) !important;
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.95), rgba(17, 24, 39, 0.95)) !important;
   border: 1px solid rgba(75, 85, 99, 0.5) !important;
+}
+
+/* Desktop two-column layout - better alignment */
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline.vertical-timeline--two-columns .vertical-timeline-element-content {
+    width: 44% !important;
+  }
+
+  .vertical-timeline.vertical-timeline--two-columns .vertical-timeline-element-date {
+    top: 6px !important;
+  }
+
+  /* Reduce gap between icon and content */
+  .vertical-timeline.vertical-timeline--two-columns .vertical-timeline-element:nth-child(odd) .vertical-timeline-element-content {
+    margin-right: 0 !important;
+  }
+
+  .vertical-timeline.vertical-timeline--two-columns .vertical-timeline-element:nth-child(even) .vertical-timeline-element-content {
+    margin-left: 0 !important;
+  }
 }
 
 /* Mobile Timeline Fixes */
