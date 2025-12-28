@@ -25,7 +25,13 @@ const Project = React.memo<ProjectProps>(function Project({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group h-full cursor-pointer"
+      whileHover={{
+        y: -10,
+        rotateX: 5,
+        rotateY: -5,
+        transition: { duration: 0.3, ease: "easeOut" }
+      }}
+      className="group h-full cursor-pointer perspective-1000 preserve-3d"
       onClick={onClick}
       role="button"
       tabIndex={0}
@@ -36,7 +42,7 @@ const Project = React.memo<ProjectProps>(function Project({
         }
       }}
     >
-      <div className="flex flex-col h-full bg-gradient-to-br from-white to-gray-50/50 dark:from-gray-800/40 dark:to-gray-900/40 border border-gray-200 dark:border-gray-700/50 rounded-xl sm:rounded-2xl shadow-lg overflow-hidden backdrop-blur-sm transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] hover:border-blue-300 dark:hover:border-blue-600/50">
+      <div className="flex flex-col h-full bg-gradient-to-br from-white to-gray-50/50 dark:from-gray-800/40 dark:to-gray-900/40 border border-gray-200 dark:border-gray-700/50 rounded-xl sm:rounded-2xl shadow-lg overflow-hidden backdrop-blur-sm transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-blue-500/25 group-hover:border-blue-300 dark:group-hover:border-blue-600/50">
         {/* Image */}
         <div className="relative w-full h-40 sm:h-48 overflow-hidden">
           <Image

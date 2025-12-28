@@ -242,6 +242,8 @@ function TimelineItem({ type, label, children, variants }: TimelineItemProps) {
     <motion.div
       variants={variants}
       className="relative group"
+      whileHover={{ x: 5 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
       {/* Timeline indicator */}
       <div className="absolute left-0 top-1 hidden sm:flex flex-col items-center">
@@ -258,7 +260,12 @@ function TimelineItem({ type, label, children, variants }: TimelineItemProps) {
             }
           `}
         >
-          <Icon className="w-4 h-4" aria-hidden="true" />
+          <motion.span
+              whileHover={{ rotate: 360, scale: 1.2 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Icon className="w-4 h-4" aria-hidden="true" />
+            </motion.span>
         </div>
 
         {/* Connecting line */}

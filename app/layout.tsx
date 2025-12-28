@@ -8,6 +8,8 @@ import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
 import ScrollProgress from "@/components/scroll-progress";
+import PageLoader from "@/components/page-loader";
+import FloatingShapes from "@/components/floating-shapes";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -76,6 +78,8 @@ export default function RootLayout({
 
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
+            <PageLoader />
+            <FloatingShapes />
             <ScrollProgress />
             <Header />
             {children}

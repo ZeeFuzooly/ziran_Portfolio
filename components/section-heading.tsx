@@ -13,8 +13,14 @@ export default function SectionHeading({
   className = ""
 }: SectionHeadingProps) {
   return (
-    <div className="mb-10 sm:mb-14">
-      <h2
+    <motion.div
+      className="mb-10 sm:mb-14"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.h2
         className={`
           text-3xl sm:text-4xl font-bold capitalize text-center
           bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700
@@ -22,18 +28,21 @@ export default function SectionHeading({
           bg-clip-text text-transparent
           ${className}
         `.trim()}
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: "spring", stiffness: 300 }}
       >
         {children}
-      </h2>
+      </motion.h2>
 
       {/* Decorative underline with animation */}
       <motion.div
-        className="mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-blue-400/40 via-blue-500 to-blue-400/40"
+        className="mx-auto mt-4 h-1 rounded-full bg-gradient-to-r from-blue-400/40 via-blue-500 to-blue-400/40"
         initial={{ width: 0, opacity: 0 }}
-        whileInView={{ width: 64, opacity: 1 }}
+        whileInView={{ width: 80, opacity: 1 }}
+        whileHover={{ width: 120 }}
         viewport={{ once: true }}
         transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
       />
-    </div>
+    </motion.div>
   );
 }

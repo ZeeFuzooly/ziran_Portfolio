@@ -76,10 +76,15 @@ export default function Experience() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{
+                    y: -8,
+                    rotateY: 2,
+                    rotateX: -2,
+                    boxShadow: "0 25px 50px -12px rgba(59, 130, 246, 0.25)"
+                  }}
                   whileTap={{ scale: 0.98 }}
-                  className="mx-auto w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl p-6 bg-white/80 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 transition-all hover:shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 group cursor-pointer"
+                  className="mx-auto w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl p-6 bg-white/80 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 transition-all hover:shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 group cursor-pointer perspective-1000 preserve-3d overflow-hidden"
                   onClick={() => handleViewDetails(item, index)}
                   role="button"
                   tabIndex={0}
@@ -90,7 +95,10 @@ export default function Experience() {
                     }
                   }}
                 >
-                  <div className="flex items-start justify-between gap-4">
+                  {/* Shine effect on hover */}
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 pointer-events-none" />
+
+                  <div className="flex items-start justify-between gap-4 relative z-10">
                     <div className="flex-1">
                       <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent group-hover:from-blue-700 group-hover:to-purple-700 dark:group-hover:from-blue-300 dark:group-hover:to-purple-300 transition-all">
                         {item.title}
