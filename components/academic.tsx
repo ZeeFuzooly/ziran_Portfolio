@@ -51,6 +51,18 @@ export default function AcademicExperience() {
             <React.Fragment key={index}>
               <VerticalTimelineElement
                 visible={true}
+                contentStyle={{
+                  background: "transparent",
+                  boxShadow: "none",
+                  border: "none",
+                  padding: "0",
+                }}
+                contentArrowStyle={{
+                  borderRight:
+                    theme === "light"
+                      ? "0.4rem solid #8b5cf6"
+                      : "0.4rem solid rgba(139, 92, 246, 0.6)",
+                }}
                 date={item.date}
                 icon={item.icon}
                 iconStyle={{
