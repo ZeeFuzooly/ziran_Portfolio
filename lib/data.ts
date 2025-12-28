@@ -677,7 +677,7 @@ export const academicData = [
   },
   {
     date: "Sep 2018 - Jul 2022",
-    degree: "Bachelor of Engineering (BEng Hons) in Software Engineering",
+    degree: "Bachelor of Engineering (Hons) in Software Engineering",
     institution: "University of Westminster",
     description: [
       "Graduated with First Class Honours.",
