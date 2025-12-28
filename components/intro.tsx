@@ -11,23 +11,64 @@ import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import TypingAnimation from "./typing-animation";
 
+// Animation variants for staggered children
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 12,
+    },
+  },
+};
+
+const scaleVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 12,
+    },
+  },
+};
+
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
-    <section
+    <motion.section
       ref={ref}
       id="home"
       aria-label="Introduction and hero section"
       className="mb-16 sm:mb-20 max-w-[75rem] mx-auto text-center scroll-mt-[100rem]"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
     >
-      <div className="flex items-center justify-center">
+      <motion.div variants={scaleVariants} className="flex items-center justify-center">
         <div className="relative">
           {/* Avatar with enhanced effects */}
           <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0, rotate: -180 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{
               type: "spring",
               stiffness: 125,
@@ -74,14 +115,12 @@ export default function Intro() {
             </div>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Text content */}
       <motion.div
         className="mt-8 sm:mt-10 px-4"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
+        variants={itemVariants}
       >
         {/* Greeting badge */}
         <motion.div
@@ -247,6 +286,6 @@ export default function Intro() {
           </div>
         </motion.div>
       </motion.div>
-    </section>
+    </motion.section>
   );
 }
