@@ -233,13 +233,13 @@ export default function ProjectModal({
                 </div>
 
                 {/* Platforms (for SimHealth) */}
-                {"platforms" in project && project.platforms && (project.platforms as string[]).length > 0 && (
+                {"platforms" in project && project.platforms && (project.platforms as readonly string[]).length > 0 && (
                   <div className="mb-6">
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">
                       Platforms I Lead
                     </h3>
                     <ul className="space-y-2.5">
-                      {(project.platforms as string[]).map((platform: string, idx: number) => (
+                      {(project.platforms as readonly string[]).map((platform: string, idx: number) => (
                         <motion.li
                           key={idx}
                           initial={{ opacity: 0, x: -20 }}

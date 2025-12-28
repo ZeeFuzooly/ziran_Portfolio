@@ -240,7 +240,7 @@ export default function ExperienceModal({
                 )}
 
                 {/* Platforms (for SimHealth) */}
-                {"platforms" in experience && experience.platforms && (experience.platforms as string[]).length > 0 && (
+                {"platforms" in experience && experience.platforms && (experience.platforms as readonly string[]).length > 0 && (
                   <div className="mb-6">
                     <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
                       <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -249,7 +249,7 @@ export default function ExperienceModal({
                       Platforms I Lead
                     </h3>
                     <ul className="space-y-2.5" role="list">
-                      {(experience.platforms as string[]).map((platform: string, idx: number) => (
+                      {(experience.platforms as readonly string[]).map((platform: string, idx: number) => (
                         <motion.li
                           key={idx}
                           initial={{ opacity: 0, x: -20 }}
