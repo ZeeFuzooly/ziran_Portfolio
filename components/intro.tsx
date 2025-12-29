@@ -237,15 +237,19 @@ export default function Intro() {
           role="navigation"
           aria-label="Social media links"
         >
-          <a
-            href="https://www.linkedin.com/in/ziranfuzooly/"
+          {/* LinkedIn Follow Button */}
+          <motion.a
+            href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=ziranfuzooly"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-center h-12 w-12 rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-2 border-gray-200 dark:border-gray-700 shadow-md transition-all hover:shadow-lg hover:scale-110 hover:text-blue-600 hover:border-blue-300 dark:hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            aria-label="Visit Ziran Fuzooly's LinkedIn profile (opens in new tab)"
+            className="group flex items-center justify-center gap-2 h-12 px-5 rounded-full bg-[#0A66C2] text-white shadow-md transition-all hover:bg-[#004182] hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#0A66C2] focus:ring-offset-2"
+            aria-label="Follow Ziran Fuzooly on LinkedIn (opens in new tab)"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             <BsLinkedin className="h-5 w-5" aria-hidden="true" />
-          </a>
+            <span className="text-sm font-semibold">Follow</span>
+          </motion.a>
 
           <a
             href="https://github.com/ZeeFuzooly"
