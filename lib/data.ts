@@ -906,7 +906,7 @@ export const newsletterData = [
   {
     title: "TechTalks by \"Zee\"",
     description: "Uncover tech's latest, join our vibrant community, and explore the future with 'TechTalks by Zee.' A monthly newsletter covering modern web development topics including React, TypeScript, Next.js, testing frameworks, and full-stack optimization.",
-    subscriberCount: 655,
+    subscriberCount: 715,
     frequency: "Monthly",
     newsletterUrl: "https://www.linkedin.com/newsletters/7073538314498179072/",
     topics: [
@@ -918,11 +918,21 @@ export const newsletterData = [
       "Spring Boot & AWS"
     ],
     recentArticles: [
-      "React and TypeScript: Essential Patterns for Developers",
-      "HTTP Status Codes: A Comprehensive Guide",
-      "Full-Stack Application Performance Optimization",
-      "Redux Guide for React Developers",
-      "Unit Testing in React and Next.js"
+      "The Frontend Skills That Will Matter in 2027 (And the Ones That Won't)",
+      "Micro Frontend Architecture: Building Scalable Frontend Systems That Actually Work",
+      "TOON: The Data Format Revolution That's Saving AI Teams 40-60% on LLM Costs",
+      "Stop Guessing Types in React: Master These 5 TypeScript Patterns",
+      "Understanding HTTP Status Codes: The Ultimate Guide for Developers",
+      "Optimizing Full-Stack Application Performance with Spring Boot, React, and AWS",
+      "Unlocking Redux: A Comprehensive Guide for React Developers",
+      "Mastering Unit Testing in React and Next.js with Jest",
+      "Next.js 14: A Leap Forward in Modern Web Development",
+      "TypeScript in Modern Web Development: Best Practices",
+      "Demystifying the Monorepo: Streamlining Software Development",
+      "Unleashing Real-Time Communication: A Deep Dive into WebSockets",
+      "Atomic Design Methodology for Building Design Systems: Unleashing the Power of Modularity and Consistency",
+      "Figma Developer Mode: Unleashing the Latest Features and Uses",
+      "Agile Project Management: The Secret to Delivering Successful Projects"
     ],
     imageUrl: techTalksLogo,
     publishedSince: "2024",
