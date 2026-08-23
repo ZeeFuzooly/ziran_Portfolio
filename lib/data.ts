@@ -36,7 +36,12 @@ import grubtech from "@/public/images/grubtech.jpg";
 import travel from "@/public/images/travel.png";
 import austorad from "@/public/images/austorad.png";
 import SimHealthAI from "@/public/images/SimHealthAI.png";
-import placeholder from "@/public/images/sassaas.png";
+import simhealthPlatform from "@/public/images/simhealth-platform.png";
+import simhealthMarketing from "@/public/images/simhealth-marketing.png";
+import simhealthAdmin from "@/public/images/simhealth-admin.png";
+import datanomyMarketing from "@/public/images/datanomy-marketing.png";
+import datanomyClient from "@/public/images/datanomy-client.png";
+import datanomyWireframe from "@/public/images/datanomy-wireframe.png";
 import pizza from "@/public/images/pizza.png";
 import weather from "@/public/images/weather.png";
 import calculately from "@/public/images/calculately.png";
@@ -66,6 +71,10 @@ export const links = [
   {
     name: "Academic",
     hash: "#academic-experience",
+  },
+  {
+    name: "Beyond Code",
+    hash: "#beyond-code",
   },
   {
     name: "Certifications",
@@ -122,6 +131,37 @@ export const experiencesData = [
       "Design Systems",
       "Atomic Design",
       "Team Leadership",
+    ],
+  },
+  {
+    title: "Lead Engineer - Frontend Consultant",
+    location: "Datanomy Technologies Limited · London, UK (Remote)",
+    employmentType: "Part-time",
+    platforms: [
+      "Datanomy Marketing Site – Public-facing website presenting the company's data and technology services, built for performance, SEO, and a polished brand experience.",
+      "Client Web Platform – Frontend engineering engagement for a Datanomy client, delivering a scalable, high-quality digital product.",
+      "Internal Wireframing Tool – In-house tool that streamlines wireframing and early-stage design workflows for client and internal projects.",
+    ],
+    description: [
+      "Provide technical leadership for the frontend engineering team, driving architecture and development decisions to deliver scalable, high-quality digital products for both clients and internal teams.",
+      "Lead frontend initiatives across the company's marketing site, client engagements, and internal tooling.",
+      "Mentor engineers, conduct code reviews, and establish engineering best practices to ensure maintainable and performant applications.",
+      "Collaborate closely with clients, cross-functional teams, and internal stakeholders to build exceptional user experiences.",
+      "Foster a culture of continuous learning, collaboration, and engineering excellence.",
+    ],
+    icon: React.createElement(CgWorkAlt),
+    date: "Jun 2026 – Present",
+    website: "https://datanomytechnologies.com/",
+    skills: [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Design Systems",
+      "Code Review",
+      "Mentoring",
+      "Frontend Architecture",
+      "Agile",
     ],
   },
   {
@@ -369,30 +409,27 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "SimHealth AI – AI Powered Dietetic Simulation Platform",
+    title: "SimHealth Platform – AI Dietetic Simulation Web App",
     description:
-      "Lead Engineer – Product Experience for the world's first AI-powered dietetic simulation platform, leading frontend architecture across three platforms: Simulation Web App, Marketing Site, and Admin Portal.",
+      "The world's first AI-powered dietetic simulation platform, enabling realistic consultations with virtual patients, real-time AI feedback, and competency-based assessments aligned with HCPC and BDA standards.",
     fullDescription:
-      "As Lead Engineer – Product Experience at SimHealth AI, I spearhead the frontend architecture and product experience of the world's first AI-powered dietetic simulation platform, designed to transform clinical education for healthcare professionals aligned with HCPC and BDA standards.",
-    platforms: [
-      "SimHealth Simulation Web App – Core AI-powered platform enabling realistic dietetic consultations with virtual patients, featuring real-time AI feedback, competency-based assessments, and adaptive learning pathways.",
-      "SimHealth Marketing Site – Public-facing website showcasing platform capabilities to universities and healthcare institutions, built with SEO optimisation and pixel-perfect Figma implementation.",
-      "SimHealth Admin Portal – Internal management system for user administration, role-based access control, institutional onboarding, leave management, and operational workflows with Google Sheets and Microsoft Entra ID integrations.",
-    ],
+      "As Lead Engineer – Product Experience, I spearhead the frontend architecture and product experience of the core SimHealth simulation platform — the world's first AI-powered dietetic simulation web app, designed to transform clinical education for healthcare professionals in line with HCPC and BDA standards. The platform lets students conduct realistic dietetic consultations with AI-driven virtual patients, receive real-time feedback, and progress through adaptive, competency-based learning pathways.",
     contributions: [
-      "Architect and lead scalable, high-performance frontend solutions using React, TypeScript, and a modular design system across all three platforms.",
-      "Translate cross-disciplinary feedback from the Head of Medical and Head of Education into actionable product and technical priorities.",
-      "Define and maintain the design system, ensuring visual consistency, accessibility compliance (WCAG), and brand alignment across the platform.",
-      "Champion learner and educator experience, driving measurable UX improvements in every sprint.",
-      "Collaborate with Data and AI teams to integrate advanced analytics dashboards and actionable experience insights.",
-      "Mentor and manage a cross-functional engineering team — conducting code reviews, setting coding standards, and nurturing engineering excellence.",
-      "Oversee sprint planning and delivery, acting as an Engineering Manager for agile ceremonies, roadmap alignment, and timely execution.",
-      "Recruit and onboard new engineering talent, including Software Engineer Interns, to scale both the product and design teams.",
-      "Manage and operate the Sri Lanka engineering office at Hatch Jaffna, including team leadership, coordination with India-based engineers, culture building, and ensuring smooth day-to-day operations for the engineering branch.",
+      "Architected a scalable, high-performance frontend using React, TypeScript, and a modular design system built on Atomic Design principles.",
+      "Built the real-time AI consultation experience, integrating conversational AI feedback and adaptive learning pathways into an intuitive learner interface.",
+      "Collaborated with Data and AI teams to integrate advanced analytics dashboards and actionable experience insights for educators.",
+      "Translated cross-disciplinary feedback from the Head of Medical and Head of Education into actionable product and technical priorities.",
+      "Championed learner and educator experience, driving measurable UX improvements in every sprint while ensuring WCAG accessibility compliance.",
+      "Led sprint planning and delivery across a cross-functional engineering team, conducting code reviews and setting coding standards.",
     ],
     duration: "Jul 2025 - Present",
     association: "Associated with Simhealth AI",
     projectUrl: "https://simhealth.co.uk/",
+    impact: [
+      { value: "1st", label: "AI-powered dietetic simulation platform worldwide" },
+      { value: "HCPC & BDA", label: "aligned with UK clinical education standards" },
+      { value: "WCAG", label: "accessibility compliance across the platform" },
+    ],
     tags: [
       "React.js",
       "TypeScript",
@@ -400,17 +437,150 @@ export const projectsData = [
       "FastAPI",
       "PostgreSQL",
       "Docker",
-      "GitHub Actions",
       "Microsoft Azure",
-      "Jira",
-      "Agile",
-      "Scrum",
       "CI/CD",
-      "TDD",
       "Design Systems",
       "Atomic Design",
     ],
-    imageUrl: SimHealthAI,
+    imageUrl: simhealthPlatform,
+  },
+  {
+    title: "SimHealth Marketing Site",
+    description:
+      "Public-facing website showcasing the SimHealth platform to universities and healthcare institutions — built with SEO optimisation, pixel-perfect Figma implementation, and a performance-first mindset.",
+    fullDescription:
+      "I led the development of the SimHealth marketing site, the public face of the platform for universities, healthcare institutions, and prospective partners. The site communicates the product's value with a polished, on-brand experience while being engineered for discoverability, speed, and conversion.",
+    contributions: [
+      "Delivered a pixel-perfect implementation of the Figma designs, maintaining strict visual consistency with the SimHealth brand and design system.",
+      "Engineered for SEO from the ground up — structured metadata, semantic markup, sitemaps, and performance optimisation for strong search rankings.",
+      "Optimised Core Web Vitals through image optimisation, code-splitting, and server-side rendering for fast first loads.",
+      "Ensured WCAG accessibility compliance and full responsiveness across devices.",
+      "Set up CI/CD pipelines for automated builds and seamless deployments.",
+    ],
+    duration: "Jul 2025 - Present",
+    association: "Associated with Simhealth AI",
+    projectUrl: "https://simhealth.co.uk/",
+    impact: [
+      { value: "5+", label: "universities & institutions showcased as partners" },
+      { value: "100%", label: "pixel-perfect implementation of Figma designs" },
+      { value: "SEO", label: "engineered for search visibility from the ground up" },
+    ],
+    tags: [
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "SEO",
+      "Figma",
+      "Responsive Design",
+      "CI/CD",
+      "Design Systems",
+    ],
+    imageUrl: simhealthMarketing,
+  },
+  {
+    title: "SimHealth Admin Portal",
+    description:
+      "Internal management system for user administration, role-based access control, institutional onboarding, and operational workflows — with Google Sheets and Microsoft Entra ID integrations.",
+    fullDescription:
+      "I led the frontend engineering of the SimHealth Admin Portal, the internal management system that powers day-to-day operations behind the platform. The portal centralises user administration, role-based access control, institutional onboarding, leave management, and operational workflows for the SimHealth team.",
+    contributions: [
+      "Built a robust admin interface with role-based access control, giving each team the right level of visibility and management capability.",
+      "Implemented institutional onboarding workflows that streamline bringing new universities and healthcare organisations onto the platform.",
+      "Integrated Microsoft Entra ID for secure, single-sign-on authentication across the organisation.",
+      "Automated operational workflows, including leave management, with Google Sheets integrations to fit existing team processes.",
+      "Reused the shared SimHealth design system to keep the internal tooling consistent, accessible, and fast to extend.",
+    ],
+    duration: "Jul 2025 - Present",
+    association: "Associated with Simhealth AI",
+    projectUrl: "https://admin.simhealth.co.uk/login",
+    impact: [
+      { value: "SSO", label: "Microsoft Entra ID single sign-on" },
+      { value: "RBAC", label: "role-based access for every team" },
+      { value: "2", label: "workflow integrations — Google Sheets & Entra ID" },
+    ],
+    tags: [
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Microsoft Entra ID",
+      "Google Sheets API",
+      "RBAC",
+      "FastAPI",
+      "Design Systems",
+    ],
+    imageUrl: simhealthAdmin,
+  },
+  {
+    title: "Datanomy Marketing Site",
+    description:
+      "Public-facing marketing website for Datanomy Technologies, presenting the company's services with a performance-first, SEO-optimised build and a polished brand experience.",
+    fullDescription:
+      "As Lead Engineer – Frontend Consultant at Datanomy Technologies, I led the development of the company's marketing website — the public face of the business for prospective clients. The site was engineered for speed, discoverability, and a refined brand experience.",
+    contributions: [
+      "Led the frontend architecture and delivery of the marketing site, from design handoff to production deployment.",
+      "Implemented SEO best practices — structured metadata, semantic markup, and performance optimisation — to strengthen search visibility.",
+      "Delivered a fully responsive, accessible experience consistent with the company's brand identity.",
+      "Established reusable components and conventions that accelerate future site updates by the wider team.",
+    ],
+    duration: "Jun 2026 - Present",
+    association: "Associated with Datanomy Technologies Limited",
+    projectUrl: "https://datanomytechnologies.com/",
+    tags: [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "SEO",
+      "Responsive Design",
+    ],
+    imageUrl: datanomyMarketing,
+  },
+  {
+    title: "Client Web Platform – Datanomy Technologies",
+    description:
+      "Frontend engineering engagement for a Datanomy client, driving architecture and development decisions to deliver a scalable, high-quality digital product.",
+    fullDescription:
+      "As part of my consultancy at Datanomy Technologies, I provide technical leadership on a client web platform engagement — driving frontend architecture and development decisions to deliver a scalable, maintainable, and high-quality digital product for the client's business.",
+    contributions: [
+      "Drove frontend architecture decisions, establishing patterns for scalability, maintainability, and performance.",
+      "Led development of key product features in close collaboration with the client and cross-functional teams.",
+      "Conducted code reviews and mentored engineers, establishing engineering best practices across the codebase.",
+      "Collaborated with stakeholders to translate business requirements into technical solutions and exceptional user experiences.",
+    ],
+    duration: "Jun 2026 - Present",
+    association: "Associated with Datanomy Technologies Limited",
+    tags: [
+      "React.js",
+      "TypeScript",
+      "Frontend Architecture",
+      "Code Review",
+      "Mentoring",
+      "Agile",
+    ],
+    imageUrl: datanomyClient,
+  },
+  {
+    title: "Internal Wireframing Tool – Datanomy Technologies",
+    description:
+      "In-house tool that streamlines wireframing and early-stage design workflows, helping teams move from idea to structured wireframe faster.",
+    fullDescription:
+      "I led the development of an internal wireframing tool at Datanomy Technologies, built to streamline early-stage design workflows for client and internal projects. The tool helps teams move quickly from idea to structured wireframe, shortening the feedback loop between design and engineering.",
+    contributions: [
+      "Designed and built the tool's frontend, focusing on a fast, intuitive editing experience.",
+      "Created a reusable library of wireframe components to standardise early-stage design output across projects.",
+      "Streamlined the design-to-engineering handoff by making wireframes easy to share and iterate on internally.",
+      "Established the technical foundation for the tool to grow with the team's design workflow needs.",
+    ],
+    duration: "Jun 2026 - Present",
+    association: "Associated with Datanomy Technologies Limited",
+    tags: [
+      "React.js",
+      "TypeScript",
+      "UI/UX",
+      "Design Tools",
+      "Internal Tooling",
+    ],
+    imageUrl: datanomyWireframe,
   },
   {
     title: "Austroads-TTM Platform",

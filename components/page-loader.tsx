@@ -99,11 +99,11 @@ export default function PageLoader() {
             {/* Profile Image */}
             <div className="relative z-10 w-24 h-24 rounded-full overflow-hidden shadow-2xl shadow-purple-500/50">
               <Image
-                src="/images/sassaas.png"
+                src="/images/ziran-profile.png"
                 alt="Ziran Fuzooly"
                 fill
                 className="object-cover object-top"
-                style={{ objectPosition: '50% 20%' }}
+                style={{ objectPosition: '50% 50%' }}
                 priority
               />
             </div>

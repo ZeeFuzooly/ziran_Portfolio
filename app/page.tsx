@@ -1,5 +1,6 @@
 import About from "@/components/about-condensed";
 import AcademicExperience from "@/components/academic";
+import BeyondCode from "@/components/beyond-code";
 import Certifications from "@/components/certification";
 import Contact from "@/components/contact";
 import Experience from "@/components/experience";
@@ -19,6 +20,7 @@ export default function Home() {
       <Skills />
       <Experience />
       <AcademicExperience/>
+      <BeyondCode />
       <Certifications/>
       <Newsletter/>
       <Contact />

@@ -85,14 +85,14 @@ export default function Intro() {
             {/* Image container */}
             <div className="relative">
               <Image
-                src="/images/sassaas.png"
+                src="/images/ziran-profile.png"
                 alt="Ziran Fuzooly - Lead Engineer Product Experience"
                 width={192}
                 height={192}
                 quality={95}
                 priority={true}
                 className="h-32 w-32 rounded-full object-cover object-top border-4 border-white shadow-2xl dark:border-gray-800 sm:h-48 sm:w-48"
-                style={{ objectPosition: '50% 20%' }}
+                style={{ objectPosition: '50% 50%' }}
               />
 
               {/* Status indicator */}

@@ -42,7 +42,7 @@ export default function AcademicExperience() {
       <section
         id="academic-experience"
         ref={ref}
-        className="scroll-mt-28 px-4 sm:px-8 mb-28 sm:mb-40"
+        className="scroll-mt-28 px-4 sm:px-8 mb-28 sm:mb-40 w-full max-w-7xl mx-auto"
       >
         <SectionHeading>Academic Background</SectionHeading>
 

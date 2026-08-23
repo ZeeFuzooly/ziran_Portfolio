@@ -217,6 +217,28 @@ export default function ProjectModal({
                   )}
                 </div>
 
+                {/* Impact Metrics */}
+                {"impact" in project && project.impact && project.impact.length > 0 && (
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+                    {project.impact.map((metric, idx) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.15 + idx * 0.1 }}
+                        className="p-4 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border border-blue-100 dark:border-blue-800/40 text-center"
+                      >
+                        <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+                          {metric.value}
+                        </div>
+                        <div className="mt-1 text-xs text-gray-600 dark:text-gray-400 leading-snug">
+                          {metric.label}
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
+
                 {/* Full Description */}
                 <div id="modal-description" className="mb-6">
                   {("fullDescription" in project && project.fullDescription) ? (
@@ -231,29 +253,6 @@ export default function ProjectModal({
                     </p>
                   )}
                 </div>
-
-                {/* Platforms (for SimHealth) */}
-                {"platforms" in project && project.platforms && (project.platforms as readonly string[]).length > 0 && (
-                  <div className="mb-6">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                      Platforms I Lead
-                    </h3>
-                    <ul className="space-y-2.5">
-                      {(project.platforms as readonly string[]).map((platform: string, idx: number) => (
-                        <motion.li
-                          key={idx}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: idx * 0.1 }}
-                          className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300"
-                        >
-                          <span className="text-purple-500 mt-1.5 flex-shrink-0">◆</span>
-                          <span>{platform}</span>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
 
                 {/* Contributions/Key Points */}
                 {"contributions" in project && project.contributions && project.contributions.length > 0 && (
